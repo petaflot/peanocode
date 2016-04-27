@@ -81,7 +81,10 @@ and the example of pair of points reaching this maximum.
  
      [6.0, 5, (8+16j), 490.66, (24+16j), 533.33, 1024, 32]
 
+###ToDo
 
+- create function for clever search for a minimal curve 
+  based on the given first step and fractal genius 
 
 
 
@@ -98,7 +101,7 @@ When [citing Peanocode in academic papers and theses](http://link.springer.com/a
 		 volume="275",<br>
 		 number="1",<br>
 		 pages="47--59",<br>
-		 abstract="This paper completes the analysis (begun by E.V. Shchepin and the author in 2008) of regular Peano curves of genus 9 in search of a curve with the minimum square-to-linear ratio. One-side regular Peano curves of genus 9 are considered, and, among these curves, a class of minimal curves with a square-to-linear ratio of 5 2/3 is singled out. A new language to describe curves is introduced which significantly simplifies the coding of these curves.",\s\s
+		 abstract="This paper completes the analysis (begun by E.V. Shchepin and the author in 2008) of regular Peano curves of genus 9 in search of a curve with the minimum square-to-linear ratio. One-side regular Peano curves of genus 9 are considered, and, among these curves, a class of minimal curves with a square-to-linear ratio of 5 2/3 is singled out. A new language to describe curves is introduced which significantly simplifies the coding of these curves.",<br>
 		 issn="1531-8605",<br>
 		 doi="10.1134/S0081543811080037",<br>
 		 url="http://dx.doi.org/10.1134/S0081543811080037"<br>
