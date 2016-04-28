@@ -23,7 +23,7 @@ class fraction:
     dnplus1 = None
     orientation = 0
     
-    @profile
+    
     def __init__(self, curve_list, d0, dnplus1, curve_type, code):
         self.bypass = curve_list
 #         self.bypass = [copy.copy(x) for x in curve_list]
