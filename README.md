@@ -31,19 +31,20 @@ corresponding fraction on the next step of Peano Curve construction.
 	
 ####Examples:
 
-Peano - Hilbert curve
+Peano - Hilbert curve<br>
+![Hilbert curve](http://xaviertalpe.be/content/images/2014/Jul/100322a.png)
 
-	d0=["i","1","-i"]
+	d0 	= ["i","1","-i"]
 	dnplus1 = ["isd","d","d","-isd"]
 	
-minimal N-curve from [Minimal Peano Curve](http://link.springer.com/article/10.1134/S0081543808040172)
+Minimal N-curve from [Minimal Peano Curve](http://link.springer.com/article/10.1134/S0081543808040172)
 
-	d0=["i","1-i","i"]
+	d0 	= ["i","1-i","i"]
 	dnplus1 = ["d","id","isd","sd","-isd","-id","d","id","isd"]
 	
 minimal one side curve from [One-side peano curves of fractal genus 9](http://link.springer.com/article/10.1134/S0081543811080037)
 
-	d0=["i","1","-i"]
+	d0 	= ["i","1","-i"]
 	dnplus1 = ["d","isd","isod","-od","d","d","od","-isd","-isod"]
 	
 
@@ -63,7 +64,7 @@ the square-to-linear ratio for the specified Peano curve.
                 		on this step.
     
 ###Return:
-a list of variables describing the maximum square-to-linear ratio 
+List of variables describing the maximum square-to-linear ratio 
 and the example of pair of points reaching this maximum.
 	
     [
@@ -80,6 +81,32 @@ and the example of pair of points reaching this maximum.
 ####Example:
  
      [6.0, 5, (8+16j), 490.66, (24+16j), 533.33, 1024, 32]
+
+###Where to start
+Run run/compute_sq2l_ratio_examples.py
+
+	python compute_sq2l_ratio_examples.py
+	2016-04-28 00:07:25,411 : peano_code  : INFO : running compute_sq2l_ratio_examples.py
+	2016-04-28 00:07:25,575 : peano_code  : INFO :
+	
+	Peano-Gilbert
+	Square-to-linear ratio = 6.0000
+	Step = 7, Overall time = 16384, Side of square = 128
+	Points [7850.667,(32+64j)],	[8533.333,(96+64j)]
+	
+	2016-04-28 00:07:56,062 : peano_code  : INFO :
+	
+	minimal N-curve
+	Square-to-linear ratio = 5.6667
+	Step = 7, Overall time = 4782969, Side of square = 2187
+	Points [1048119.750,1215j],	[1087485.750,(243+1620j)]
+	
+	2016-04-28 00:08:01,949 : peano_code  : INFO :
+	
+	minimal one side curve
+	Square-to-linear ratio = 5.6667
+	Step = 7, Overall time = 4782969, Side of square = 2187
+	Points [2391484.500,2187j],	[2745778.500,(1215+1458j)]
 
 ###ToDo
 
@@ -108,5 +135,5 @@ When [citing Peanocode in academic papers and theses](http://link.springer.com/a
         }
 
 
-Peano_code is open source software released under the [GNU LGPLv3 license](http://www.gnu.org/licenses/lgpl.html).<br>
+Peanocode is open source software released under the [GNU LGPLv3 license](http://www.gnu.org/licenses/lgpl.html).<br>
 Copyright (c) 2016-now Konstantin Bauman
