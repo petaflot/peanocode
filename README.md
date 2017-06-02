@@ -63,7 +63,7 @@ the square-to-linear ratio for the specified Peano curve.
                 		up to the N-th step and calculates square-to-linear ratios between all pairs of corners
                 		on this step.
     
-###Return:
+### Return:
 List of variables describing the maximum square-to-linear ratio 
 and the example of pair of points reaching this maximum.
 	
@@ -78,11 +78,11 @@ and the example of pair of points reaching this maximum.
         7: (int) the side of the constructed square
     ]
     
-####Example:
+#### Example:
  
      [6.0, 5, (8+16j), 490.66, (24+16j), 533.33, 1024, 32]
 
-###Where to start
+### Where to start
 Run run/compute_sq2l_ratio_examples.py
 
 	python compute_sq2l_ratio_examples.py
@@ -108,7 +108,7 @@ Run run/compute_sq2l_ratio_examples.py
 	Step = 7, Overall time = 4782969, Side of square = 2187
 	Points [2391484.500,2187j],	[2745778.500,(1215+1458j)]
 
-###ToDo
+### ToDo
 
 - create function for clever search for a minimal curve 
   based on the given first step and fractal genius 
@@ -116,7 +116,7 @@ Run run/compute_sq2l_ratio_examples.py
 
 
 
-##Citing Peanocode
+## Citing Peanocode
 
 When [citing Peanocode in academic papers and theses](http://link.springer.com/article/10.1134/S0081543811080037), please use the following BibTeX entry:
 
