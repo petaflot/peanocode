@@ -1,10 +1,10 @@
-#Peanocode -- Processing Peano Curves in Python
+# Peanocode -- Processing Peano Curves in Python
 
 Peanocode is a Python library for *encoding Peano curves*, *calculating square-to-linear ratio* and *searching for a minimal curve* based on the specified first step and fractal genius.
 
-##Documentation
+## Documentation
 
-###Coding Peano curve
+### Coding Peano curve
 
 The codes defining Peano curves introduced in <br>
 Bauman K., "One-side peano curves of fractal genus 9" <br>
@@ -29,10 +29,10 @@ corresponding fraction on the next step of Peano Curve construction.
 	i - represents rotation or multiplying to i in the complex plane
 	-i - represents rotation or multiplying to -i in the complex plane
 	
-####Examples:
+#### Examples:
 
 Peano - Hilbert curve<br>
-![Hilbert curve](http://xaviertalpe.be/content/images/2014/Jul/100322a.png)
+![Hilbert curve](https://en.wikipedia.org/wiki/File:Hilbert_curve.gif)
 
 	d0 	= ["i","1","-i"]
 	dnplus1 = ["isd","d","d","-isd"]
@@ -49,12 +49,12 @@ minimal one side curve from [One-side peano curves of fractal genus 9](http://li
 	
 
 
-###Calculatin square-to-linear ratio:
+### Calculatin square-to-linear ratio:
 
 **compute_sq_ratio**(d0, dnplus1, C, N) - is a function for calculating 
 the square-to-linear ratio for the specified Peano curve.
     
-###Attributes:
+### Attributes:
 
     d0       			-  code of the basic step of the curve.
     dnplus1  			-  code for constructing the next step of the curve based on the current one. 
