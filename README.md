@@ -32,7 +32,7 @@ corresponding fraction on the next step of Peano Curve construction.
 #### Examples:
 
 Peano - Hilbert curve<br>
-![Hilbert curve](https://en.wikipedia.org/wiki/File:Hilbert_curve.gif)
+![Hilbert curve](https://spacefillingcurves.files.wordpress.com/2015/03/hilbert-1-to-4-600px.png)
 
 	d0 	= ["i","1","-i"]
 	dnplus1 = ["isd","d","d","-isd"]
