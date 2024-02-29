@@ -3,7 +3,7 @@
 
 import copy
 import numpy as np
-from peano_code.code import get_next_code
+from peanocode.code import get_next_code
 
 class arrow:
     def __init__(self, complex_coordinate, time):

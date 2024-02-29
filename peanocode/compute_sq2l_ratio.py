@@ -1,8 +1,8 @@
 # Copyright (C) 2016 Konstantin Bauman <kbauman@yandex.ru>
 # Licensed under the GNU LGPL v3 - http://www.gnu.org/licenses/lgpl.html
 
-from peano_code.curve import curve_step
-from peano_code.fraction import fraction_pair
+from peanocode.curve import curve_step
+from peanocode.fraction import fraction_pair
 
 
 '''

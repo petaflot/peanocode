@@ -2,10 +2,10 @@
 # Licensed under the GNU LGPL v3 - http://www.gnu.org/licenses/lgpl.html
 
 import sys
-sys.path.append('../')
-sys.path.append('../../')
+#sys.path.append('../')
+#sys.path.append('../../')
 import logging
-from peano_code.compute_sq2l_ratio import compute_sq2l_ratio
+from peanocode.compute_sq2l_ratio import compute_sq2l_ratio
 
 
 

@@ -3,8 +3,8 @@
 
 import copy
 import numpy as np
-from peano_code.code import code
-from peano_code.fraction import fraction, arrow
+from peanocode.code import code
+from peanocode.fraction import fraction, arrow
 
            
 def conjugate_curve(curve):

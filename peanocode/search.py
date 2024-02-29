@@ -1,7 +1,7 @@
-from peano_code.compute_sq2l_ratio import compute_sq2l_ratio
+from peanocode.compute_sq2l_ratio import compute_sq2l_ratio
 
 ''''
-TO DO:
+TODO:
      create function for clever search for a minimal curve 
      based on the given first step and fractal genius 
 '''
@@ -25,9 +25,3 @@ def search_o(d0,dnplus1,C,N):
         print(compute_sq2l_ratio(d0,temp,C,N))
     
 #search_o(d0,dnplus1,C,N)
-    
-    
-    
-    
-    
-    
