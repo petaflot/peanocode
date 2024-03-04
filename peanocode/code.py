@@ -13,8 +13,9 @@ class code:
     def copy_code(self):
         return code(self.complex,self.if_conjugate,self.if_reflection)
     
-    def print_code(self):
-        print (self.complex,self.if_conjugate,self.if_reflection)
+    @property
+    def code(self):
+        return (self.complex,self.if_conjugate,self.if_reflection)
         
 def get_next_code(prev_code, n_code):
     c = n_code.complex

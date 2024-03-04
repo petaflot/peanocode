@@ -35,7 +35,7 @@ class fraction:
     def print_sq(self):
         print("cord =" + str(self.left_lower_cordinates)+"; cord_begin = " + str(self.coord_begin))
         print("code = " )
-        self.code.print_code()
+        print(self.code.code())
         print(self.bypass[0].com,self.bypass[1].com,self.bypass[2].com)
         print(self.time_begin) 
         print("====")

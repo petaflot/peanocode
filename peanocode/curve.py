@@ -32,15 +32,12 @@ Attributes:
     type     - one-side (1) or diagonal (0) curve
 '''
 class curve_step:
-    '''
-    ["a","b","c"] is a list of times of visits of the 2nd, 3rd and 4th corner of the curve. 
-    '''
-    def __init__(self, d0, dnplus1, time = ["a","b","c"]):
-        'create initial step'
-        self.d0 = list()
-        self.d0.append(arrow(complex(d0[0].replace("i","j")),time[0]))
-        self.d0.append(arrow(complex(d0[1].replace("i","j")),time[1]))
-        self.d0.append(arrow(complex(d0[2].replace("i","j")),time[2]))
+    def __init__(self, d0, dnplus1):
+        'create initial step ; chr() a list of times of visits of the 2nd, ..., nth corner of the curve'
+        try:
+            self.d0 = [arrow(complex(c.replace("i","j")), chr(97+i)) for i, c in enumerate(d0)]
+        except AttributeError:
+            self.d0 = [arrow(c, chr(97+i)) for i, c in enumerate(d0)]
         'create curve'
         self.curve = copy.deepcopy(self.d0)
         'encode dnplus1 from user input to internal code'
@@ -56,8 +53,11 @@ class curve_step:
     type = 0 - diagonal curve 
     '''
     def get_type(self, d0):
-        second_step = complex(d0[1].replace("i","j"))
-        self.type = 0 if second_step == 1 else 1
+        try:
+            second_step = complex(d0[1].replace("i","j"))
+            self.type = 0 if second_step == 1 else 1
+        except AttributeError:
+            self.type = 0 if d0[1] == 1 else 1
         
     'encode dnplus1 from user input to internal class code'
     def encode_dnplus1(self,dnplus1):
@@ -99,6 +99,7 @@ class curve_step:
                 multiply_i_curve(temp_curve)
                 i /= 1j
             next_step_curve += copy.deepcopy(temp_curve)
+            #print(f"{transformation_code.code=}")
         'assign next step of the curve to the class'
         self.curve = next_step_curve
         self.n += 1
@@ -113,7 +114,7 @@ class curve_step:
         time_list = {}
         b_corners = [complex(0,(side-1)),complex((side-1),0),complex((side-1),(side-1))]
         'initialize values for corner times'
-        time = {"a":0.,"b":0.,"c":0.}
+        time = {chr(97+i): 0. for i in range(len(self.d0))}
         
         '''
         compute number of times which curve visits each corner (vertex)
@@ -140,7 +141,7 @@ class curve_step:
             'if the curve reaches next corner of the original square we update time information'
             if current_point in b_corners:
                 time_list[visited_corner_number] = time.copy()
-                time = {"a":0.,"b":0.,"c":0.}
+                time = {chr(97+i): 0. for i in range(len(self.d0))}
                 visited_corner_number += 1
             
             'try to increase number of visits to the corner (vertex)'  
@@ -162,8 +163,11 @@ class curve_step:
                 return -2
         
         '''
-        Calculate time needed to reach 2nd, 3rd and 4th corner (a,b,c)
+        Calculate time needed to reach 2nd, ..., nth corner (a,b,...) TODO
+
+        TODO implement for curves of length n ; what does this even do?
         '''
+        if len(self.d0) != 3: raise NotImplementedError
         num = self.len()/3
         b = np.matrix([[1,1,1],
                        [float(time_list[0]["a"]-num),float(time_list[0]["b"]),    float(time_list[0]["c"])],
@@ -173,20 +177,10 @@ class curve_step:
         
         'fill the curve with the exact time values'
         for arr in self.curve:
-            if arr.time == "a":
-                arr.time = float(e[0,0])
-            if arr.time == "b":
-                arr.time = float(e[0,1])
-            if arr.time == "c":
-                arr.time = float(e[0,2])
+            arr.time = float(e[0,ord(arr.time)-97])
         
         for arr in self.d0:
-            if arr.time == "a":
-                arr.time = float(e[0,0])
-            if arr.time == "b":
-                arr.time = float(e[0,1])
-            if arr.time == "c":
-                arr.time = float(e[0,2])
+            arr.time = float(e[0,ord(arr.time)-97])
         
         'curve is valid'
         return 1
